@@ -1,12 +1,9 @@
 function solution(num_list) { 
-    const 짝수 = num_list.filter(item => item % 2 === 0);
-    const 홀수 = num_list.filter(item => item % 2 !== 0);
+    const 짝수개수 = num_list.filter(item => item % 2 === 0).length;
     
-     console.log(num_list);
-    console.log(짝수)
-    console.log(홀수)
+    return [짝수개수, num_list.length - 짝수개수]
     
-    return [짝수.length, 홀수.length]
+    
     
 //     let countZero = 0;
     
