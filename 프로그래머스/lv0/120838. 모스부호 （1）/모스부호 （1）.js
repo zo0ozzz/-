@@ -11,26 +11,48 @@ function solution(letter) {
     
     const letterArray = letter.split(' ');
     
-    let morseArray = [];
-    let alphabetArray = [];
-    
-    for(key in morse) {
-        morseArray.push(key)
-        alphabetArray.push(morse[key])
-    }
-    
-    let indexArray = [];
-    letterArray.map((item1, index1) => {
-        morseArray.forEach((item2, index2) => {
-            if(item1 === item2) {
-                indexArray[index1] = index2;
+    const parsedString = letterArray.reduce((acc, item) => {
+        for(key in morse) {
+            if(item === key) {
+                acc += morse[key]
             }
-        })
-    })
+        } 
+        
+        return acc;
+    }, '')
     
-    const resultArray = indexArray.map(index => {
-        return alphabetArray[index]
-    })
+    return parsedString;
     
-    return resultArray.join('')
+//     const parsedArray = letterArray.map(item => {
+//     for(key in morse) {
+//         if(item === key) {
+//             return morse[key]
+//         }
+//     }
+//     })
+    
+//     return parsedArray.join('')
+
+//     let morseArray = [];
+//     let alphabetArray = [];
+    
+//     for(key in morse) {
+//         morseArray.push(key)
+//         alphabetArray.push(morse[key])
+//     }
+    
+//     let indexArray = [];
+//     letterArray.map((item1, index1) => {
+//         morseArray.forEach((item2, index2) => {
+//             if(item1 === item2) {
+//                 indexArray[index1] = index2;
+//             }
+//         })
+//     })
+    
+//     const resultArray = indexArray.map(index => {
+//         return alphabetArray[index]
+//     })
+    
+//     return resultArray.join('')
 }
