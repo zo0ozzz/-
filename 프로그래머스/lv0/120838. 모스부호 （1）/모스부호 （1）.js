@@ -12,16 +12,26 @@ function solution(letter) {
     const letterArray = letter.split(' ');
     
     const parsedString = letterArray.reduce((acc, item) => {
-        for(key in morse) {
-            if(item === key) {
-                acc += morse[key]
-            }
-        } 
+        acc += morse[item];
         
         return acc;
     }, '')
-    
+
     return parsedString;
+    
+//     const letterArray = letter.split(' ');
+    
+//     const parsedString = letterArray.reduce((acc, item) => {
+//         for(key in morse) {
+//             if(item === key) {
+//                 acc += morse[key]
+//             }
+//         } 
+        
+//         return acc;
+//     }, '')
+    
+//     return parsedString;
     
 //     const parsedArray = letterArray.map(item => {
 //     for(key in morse) {
