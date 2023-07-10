@@ -2,11 +2,19 @@ function solution(box, n) {
     // ~의 최댓값 최솟값을 구하는 방식.
     // - while(조건)이나 나누기 Math가 자주 활용됨.
     
-    const [가로, 세로, 높이] = box;
+    const answer = box.reduce((acc, item) => { 
+        acc = acc * Math.floor(item / n);
+        
+        return acc;
+    }, 1)
     
-    const diceAmount = Math.floor(가로 / n) * Math.floor(세로 / n) * Math.floor(높이 / n)
+    return answer;
     
-    return diceAmount;
+//     const [가로, 세로, 높이] = box;
+    
+//     const diceAmount = Math.floor(가로 / n) * Math.floor(세로 / n) * Math.floor(높이 / n)
+    
+//     return diceAmount;
     
 //     const result = box.reduce((acc, item) => {
 //         let i = 1;
