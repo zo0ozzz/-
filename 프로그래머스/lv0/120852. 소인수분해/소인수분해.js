@@ -1,33 +1,49 @@
 function solution(n) {
-    let yaksu = [];
+    let i = 2;
     
-    for(i = 1; i <= n; i++) {
+    let arr = [];
+    
+    while(i <= n) {
         if(n % i === 0) {
-            yaksu.push(i);
-        }   
+            arr.push(i);
+            n = n / i;
+        }
+        else {
+            i++
+        }
     }
     
-    // console.log(yaksu.filter(item => isSosu(item)).sort())
+    return [...new Set(arr)];
     
-    return [...new Set(yaksu)].filter(item => isSosu(item))
+    
+//     function isSosu(num) {
+//         let count = 0;
+        
+//         for(i = 1; i <= num; i++) {
+//             if(num % i === 0) {
+//                 count++
+                
+//                 if(count === 3) {
+//                     break;
+//                 }
+//             }
+//         }    
+    
+//         if(count === 2) {
+//             return true
+//         } 
+            
+//         return false;
+//     }
+        
+//     let yaksu = [];
+    
+//     for(i = 1; i <= n; i++) {
+//         if(n % i === 0) {
+//             yaksu.push(i);
+//         }   
+//     }
+    
+//     return [...new Set(yaksu)].filter(item => isSosu(item))
 }
 
-function isSosu(num) {
-        let count = 0;
-        
-        for(i = 1; i <= num; i++) {
-            if(num % i === 0) {
-                count++
-                
-                if(count === 3) {
-                    break;
-                }
-            }
-        }    
-    
-    if(count === 2) {
-        return true
-    } 
-            
-    return false;
-}
