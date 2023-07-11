@@ -1,11 +1,23 @@
 function solution(my_string) {
-    function boolean(element) {
-        return element !== 'a' && element !== 'e' && element !== 'i' && element !== 'o' && element !== 'u';  
-    }
+    const regex = /[aeiou]/g;
     
-    const toArray = my_string.split('');
+    const filtered = my_string.replace(regex, '');
     
-    const filtered = toArray.filter(item => boolean(item));
+    return filtered;          
+
+//     const regex = /a|e|i|o|u/g;
     
-    return filtered.join('');
+//     const filtered = my_string.replace(regex, '');
+    
+//     return filtered;          
+
+//     function boolean(element) {
+//         return element !== 'a' && element !== 'e' && element !== 'i' && element !== 'o' && element !== 'u';  
+//     }
+    
+//     const toArray = my_string.split('');
+    
+//     const filtered = toArray.filter(item => boolean(item));
+    
+//     return filtered.join('');
 }
