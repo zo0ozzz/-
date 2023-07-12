@@ -1,9 +1,12 @@
 function solution(my_string) {
-    const toArray = my_string.split('');
+    const toArray = [...my_string];
     
-    const unique = [...new Set(toArray)];
+    return toArray.filter((item, index) => index === my_string.indexOf(item)).join('');
+//     const toArray = my_string.split('');
     
-    const toString = unique.join('')
+//     const unique = [...new Set(toArray)];
     
-    return toString;
+//     const toString = unique.join('')
+    
+//     return toString;
 }
