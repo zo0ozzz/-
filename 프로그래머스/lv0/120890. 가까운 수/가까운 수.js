@@ -1,19 +1,24 @@
 function solution(array, n) {
-    return array.reduce((acc, cur) => {
-        if(Math.abs(n - cur) <= Math.abs(n - acc)) {
-            if(Math.abs(n - cur) === Math.abs(n - acc)) {
-                acc = [acc, cur].sort((a, b) => a - b)[0];
-            }
-            else {
-                acc = cur;
-            }
-        }
+    return array.sort((a, b) => Math.abs(n - a) - Math.abs(n - b) || a - b)[0]
+    
+    
+    
+//     function howNear(element) {
+//         return Math.abs(n - element)
+//     }
+    
+//     return array.reduce((acc, cur) => {
+//         if(howNear(cur) <= howNear(acc)) {
+//             if(howNear(cur) === howNear(acc)) {
+//                 acc = [acc, cur].sort((a, b) => a - b)[0];
+//             }
+//             else {
+//                 acc = cur;
+//             }
+//         }
         
-        return acc;
-    }, 1000)
-    
-    
-    
+//         return acc;
+//     }, 1000)
     
 //     function howNear(n, element) {
 //         return Math.abs(n - element)
