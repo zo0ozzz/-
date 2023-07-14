@@ -1,23 +1,25 @@
 function solution(numbers) {
-  const ddd = [
-    "zero",
-    "one",
-    "two",
-    "three",
-    "four",
-    "five",
-    "six",
-    "seven",
-    "eight",
-    "nine",
-  ].join("|");
+    return parseInt(["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"].reduce((acc, cur, index) => acc.replaceAll(cur, index), numbers));
 
-  const reg = new RegExp(ddd, "g");
+//   const ddd = [
+//     "zero",
+//     "one",
+//     "two",
+//     "three",
+//     "four",
+//     "five",
+//     "six",
+//     "seven",
+//     "eight",
+//     "nine",
+//   ].join("|");
 
-  return parseInt(
-    numbers
-      .replace(reg, (item) => convert(item))
-  );
+//   const reg = new RegExp(ddd, "g");
+
+//   return parseInt(
+//     numbers
+//       .replace(reg, (item) => convert(item))
+//   );
 }
 
 function convert(item) {
