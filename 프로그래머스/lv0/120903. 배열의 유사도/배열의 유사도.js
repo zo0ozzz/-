@@ -1,13 +1,16 @@
 function solution(s1, s2) {
-    var answer = 0;
+    const arr1 = [...new Set(s1)];
+    const arr2 = [...new Set(s2)];
     
-    for(el1 of s1) {
-        for(el2 of s2) {
-            if(el1 === el2) {
-                answer++ 
+    let count = 0;
+    
+    for(item1 of arr1) {
+        for(item2 of arr2) {
+            if(item1 === item2) {
+                count++
             }
         }
     }
     
-    return answer;
+    return count;
 }
