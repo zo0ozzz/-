@@ -1,4 +1,25 @@
 function solution(array) {
+  const countObj = {};
+  let mostFrequentElement = null;
+  let maxCount = 0;
+
+  for (const element of array) {
+    countObj[element] = (countObj[element] || 0) + 1;
+
+    if (countObj[element] > maxCount) {
+      mostFrequentElement = element;
+      maxCount = countObj[element];
+    }
+  }
+
+  if (Object.values(countObj).filter(count => count === maxCount).length > 1) {
+    return -1;
+  }
+
+  return mostFrequentElement;
+}
+
+function solution1(array) {
       function count(element) {
     let count = 0;
 
