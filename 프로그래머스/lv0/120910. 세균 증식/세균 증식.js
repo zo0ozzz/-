@@ -1,9 +1,11 @@
 function solution(n, t) {
-    let quantity = n;
+    return n * Math.pow(2, t);
     
-    for(i = 1; i <= t; i++) {
-        quantity *= 2;  
-    }
+//     let quantity = n;
     
-    return quantity;
+//     for(i = 1; i <= t; i++) {
+//         quantity *= 2;  
+//     }
+    
+//     return quantity;
 }
