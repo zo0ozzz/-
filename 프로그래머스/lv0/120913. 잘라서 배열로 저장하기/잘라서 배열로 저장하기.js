@@ -1,13 +1,21 @@
 function solution(my_str, n) {
-    const arr = my_str.split('');
-    
     let result = [];
     
-    for(i = 0; i <= ((arr.length - 1) / n) ; i++) {
-        result.push(arr.slice(i * n, (i + 1) * n).join(''));
+    for(i = 0; i < my_str.length; i += n) {
+        result.push(my_str.substr(i, n))    
     }
     
     return result;
+    
+//     const arr = my_str.split('');
+    
+//     let result = [];
+    
+//     for(i = 0; i < arr.length; i += n) {
+//         result.push(arr.slice(i, (i + n)).join(''));
+//     }
+    
+//     return result;
             
 //     const arr = my_str.split('');
     
