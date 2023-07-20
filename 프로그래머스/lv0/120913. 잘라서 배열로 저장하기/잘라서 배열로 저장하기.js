@@ -1,11 +1,13 @@
 function solution(my_str, n) {
-    let result = [];
+    return my_str.match(new RegExp(`.{1,${n}}`, 'g'));
     
-    for(i = 0; i < my_str.length; i += n) {
-        result.push(my_str.substr(i, n))    
-    }
+//     let result = [];
     
-    return result;
+//     for(i = 0; i < my_str.length; i += n) {
+//         result.push(my_str.substr(i, n))    
+//     }
+    
+//     return result;
     
 //     const arr = my_str.split('');
     
