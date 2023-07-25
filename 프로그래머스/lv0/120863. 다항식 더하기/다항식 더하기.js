@@ -2,9 +2,6 @@ function solution(polynomial) {
     let x = 0;
     let y = 0;
     
-    let arr1 = [];
-    let arr2 = [];
-    
     for(item of polynomial.split(' + ')) {
         if(/x/.test(item)) {
             if(item === 'x') {
@@ -31,7 +28,7 @@ function solution(polynomial) {
     }
     
     if(x === 0) {
-        return `${y}`
+        return y.toString()
     }
     
     if(y === 0) {
