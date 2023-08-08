@@ -14,14 +14,20 @@ function solution(A,B){
     
 //     return sum;
     
+//     A.sort((a, b) => a - b);
+//     B.sort((a, b) => b - a);
+    
+//     let sum = 0;
+    
+//     for(i = 0; i < A.length; i++) {
+//         sum += A[i] * B[i];
+//     }
+    
+//     return sum;
+    
     A.sort((a, b) => a - b);
     B.sort((a, b) => b - a);
     
-    let sum = 0;
-    
-    for(i = 0; i < A.length; i++) {
-        sum += A[i] * B[i];
-    }
-    
-    return sum;
+    return A.reduce((acc, item, index) => acc + item * B[index], 0);
+   
 }
