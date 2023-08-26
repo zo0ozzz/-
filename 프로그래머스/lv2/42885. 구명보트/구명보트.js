@@ -60,21 +60,50 @@ function solution(people, limit) {
     
 //     console.log(arr1, arr2, boats)
     
+//     people.sort((a, b) => a - b);
+    
+//     let count = 0;
+    
+//     while(people.length > 0) {
+//         if(people[0] + people[people.length - 1] <= limit) {
+//             people.shift();
+//             people.pop();
+            
+//             count++
+//         }   
+//         else {
+//             people.pop();
+            
+//             count++
+//         }
+//     }
+    
+//     return count;
+    
     people.sort((a, b) => a - b);
     
     let count = 0;
     
-    while(people.length > 0) {
-        if(people[0] + people[people.length - 1] <= limit) {
-            people.shift();
-            people.pop();
-            
+    let i = 0;
+    let j = people.length - 1;
+    
+    while(i <= j) {
+        if(i === j) {
             count++
-        }   
-        else {
-            people.pop();
             
-            count++
+            break;
+        }
+        
+        if(people[i] + people[j] <= limit) {
+            i++;
+            j--;
+            
+            count++;
+        }
+        else{
+            j--;
+            
+            count++;
         }
     }
     
